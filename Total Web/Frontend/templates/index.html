@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Live Tracking</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="../static/css/index-styles.css">
+</head>
+<body>
+    <div class="route_info" id="route_info"></div>
+    <div id="map"></div>
+    <div class="container" id="trackingCard">
+        <!-- <p id="connection">Loading...</p> -->
+        <p id="status">Select a route to start tracking</p>
+        <select id="routeSelect">
+            <option value="">-- Select Route --</option>
+        </select>
+        <div class="button-container">
+            <!-- <button id="recenter">🔄 Recenter Map</button> -->
+            <button id="find-distance" >📏 Find Distance</button>
+        </div>
+        <p id="distance-time">📏 Distance: -- | ⏳ ETA: --</p>
+        <p id="last-updated"></p>
+    </div>
+    <div class="bottom-menu">
+        <div class="menu-item active" id="homeBtn"><i class="fa-solid fa-house"></i></div>
+        <div class="menu-item" id="trackBtn"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="menu-item" id="chatBtn"><i class="fa-solid fa-comments hidden"></i></div>
+    </div>
+    <!-- <button id="login-logout" onclick="login_logout(event)" fdprocessedid="pvooi9"></button> -->
+
+<!-- Modal HTML -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Login</h2>
+        <!-- Wrap login method buttons -->
+        <div id="loginChoice">
+            <div id="g_id_signin" class="google-login-btn" ></div>
+        </div>
+        <div id="rollLoginForm" style="display:none;">
+            <label for="rollNo">Roll No:</label>
+            <input class="login-inp" type="text" id="rollNo" placeholder="Enter Roll No" required>
+            <label for="password">Password:</label>
+            <input class="login-inp" type="password" id="password" placeholder="Enter Password" required>
+
+            <button class="login-btn" onclick="submitLogin(event)">Submit</button>
+        </div>
+        <div id="googleLoginForm" style="display:none;">
+            <div id="g_id_signin"></div>
+        </div>
+    </div>
+</div>
+<button id="floating-recenter-btn" title="Recenter">⟲</button>
+
+<script src="../static/js/index.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>

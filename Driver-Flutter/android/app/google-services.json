@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555080443471",
+    "project_id": "vjbus--vnr",
+    "storage_bucket": "vjbus--vnr.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555080443471:android:32144f4419d40bbcd4ac3a",
+        "android_client_info": {
+          "package_name": "com.punjab.nextstop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEqkq3pR8vhsmO1hJ66FZUXhLZ-RL-eL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
